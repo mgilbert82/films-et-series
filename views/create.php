@@ -54,7 +54,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="./create.php"
-                  ><i class="fa-solid fa-pencil"></i></i> Publier un film</a
+                  ><i class="fa-solid fa-pencil"></i></i> Publier un film/série</a
                 >
               </li>
             </ul>
@@ -76,7 +76,12 @@
     <main class="container-fluid mx-auto">
       <h3 class="text-center mt-5">Publier un nouveau film/série</h3>
 
-      <form method="GET" class="container-fluid w-50">
+      <form method="POST" class="container-fluid w-50">
+      <select name="typeId" id="type" class="form-select">
+          <option value="" selected>--Sélectionner un type --</option>
+          <option value="1">Film</option>
+          <option value="2">Série</option>
+        </select>
         <label for="title" class="form-label">Titre</label>
         <input
           type="text"
@@ -113,7 +118,7 @@
           <option value="1">Action</option>
           <option value="2">Comédie</option>
           <option value="3">Science fiction</option>
-          <option value="4">Fantastique</option>
+          <option value="4">Aventure</option>
           <option value="5">Animation</option>
           <option value="6">Auteur</option>
           <option value="7">Horreur</option>
