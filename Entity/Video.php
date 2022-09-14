@@ -1,6 +1,6 @@
 <?php
 
-class Film_et_serie
+class Video
 {
 
     //Attributs
@@ -12,10 +12,10 @@ class Film_et_serie
     private string $image_url;
     private string $trailer_url;
     private string $director;
-    private string $releaseDate;
+    private string $release_date;
 
     //Constructeur
-    public function __constructor(array $data)
+    public function __construct(array $data)
     {
         $this->hydrate($data);
     }
@@ -134,14 +134,14 @@ class Film_et_serie
         return $this;
     }
 
-    public function getReleaseDate(): string
+    public function getRelease_date(): string
     {
-        return $this->releaseDate;
+        return $this->release_date;
     }
 
-    public function setReleaseDate(string $releaseDate): self
+    public function setRelease_date(string $release_date): self
     {
-        $this->releaseDate = $releaseDate;
+        $this->release_date = $release_date;
 
         return $this;
     }
