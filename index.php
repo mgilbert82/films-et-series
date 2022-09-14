@@ -40,7 +40,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="./index.php">
           <i class="bi bi-film w-50"></i> Films et Séries
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,11 +83,18 @@
         <div class="card m-3 bg-light" style="width: 18rem">
           <img src="<?= $movie->getImage_url() ?>" class="card-img-top" alt="<?= $movie->getTitle() ?>" />
           <div class="card-body">
-            <h5 class="card-title"><?= $movie->getTitle() ?></h5>
+            <h5 class="card-title text font-weight-bold"><?= $movie->getTitle() ?></h5>
             <h6 class="card-subtitle text-muted"><?= $movie->getDirector() ?></h6>
-            <p class="card-subtitle mt-3 text-muted">Date de sortie: <?= $release_date->format('d/m/Y') ?></p>
-            <p class="card-text mt-4"><?= $movie->getDescription() ?></p>
-            <p class="blockquote-footer mt-4" style="color:<?= $category->getColor(); ?>"><?= $category->getName(); ?></p>
+            <p class="card-subtitle mt-3 text-muted">Date de sortie: <?= $release_date->format('d-m-Y') ?></p>
+            <p class="card-text mt-3"><?= $movie->getDescription() ?></p>
+
+            <div class=" text-light bg-dark rounded">
+              <?= $movie->getType_video() ?>
+              <span class="blockquote-footer mt-4" style="color:<?= $category->getColor(); ?>"><?= $category->getName(); ?></span>
+              </p>
+            </div>
+            <p class="text-uppercase ">
+
             <p><a href="<?= $movie->getTrailer_url() ?>" class="link-info mx-auto" target="_blank"><i class="bi bi-play-circle-fill"></i> Bande Annonce</a></p>
             <a href="./views/update.php" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Modifier"><i class="fa-solid fa-pen-to-square"></i></a>
             <a href="./views/delete.php?id=<?= $movie->getId() ?>" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Supprimer"><i class="fa-solid fa-trash"></i></a>

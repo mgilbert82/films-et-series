@@ -5,7 +5,7 @@ class Video
 
     //Attributs
     private int $id;
-    private int $type_id;
+    private string $type_video;
     private int $category_id;
     private string $title;
     private string $description;
@@ -45,15 +45,15 @@ class Video
         return $this;
     }
 
-    public function getType_id(): int
+    public function getType_video(): string
     {
-        return $this->type_id;
+        return $this->type_video;
     }
 
 
-    public function setType_id(int $type_id): self
+    public function setType_video(string $type_video): self
     {
-        $this->type_id = $type_id;
+        $this->type_video = $type_video;
 
         return $this;
     }
